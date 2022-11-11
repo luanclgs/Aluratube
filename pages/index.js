@@ -13,7 +13,7 @@ function HomePage() {
       <StyledTimeline/>
       <div style={estilosDasHomePages}>
         <Menu/>
-        <Header />rpm
+        <Header />
         <Timeline playlists={config.playlists} />
 
       </div>
@@ -31,6 +31,7 @@ function Timeline(props) {
   return (
 
     <StyledTimeline>
+    
       {playlistNames.map((playlistName) => {
         const videos = props.playlists[playlistName]
         return (
@@ -56,7 +57,7 @@ function Timeline(props) {
 };
 
 const StyledHeader = styled.div`
- img {
+ img.profile {
       width: 120px;
       height:120px;
       border-radius: 50%;
@@ -68,14 +69,22 @@ const StyledHeader = styled.div`
   width: 100%;
   padding: 16px 36px;
   gap:16px;
-
  }
+ img.banner {
+  display: flex;
+      width: 100%;
+      height:350px;
+      margin :0px
+ }
+
+
  `;
 function Header() {
   return (
     <StyledHeader>
+      <img className="banner" src={`https://www.unasus.gov.br/uploads/noticia/jogo_1.jpg`} />
       <section className="user-info">
-        <img src={`http://github.com/${config.github}.png`} />
+        <img className="profile" src={`http://github.com/${config.github}.png`} />
 
         <div>
           <h2>
