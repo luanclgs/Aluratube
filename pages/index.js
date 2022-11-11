@@ -4,6 +4,7 @@ import { CSSReset } from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 import React from "react";
+import { ColorModeContext } from "../src/components/Menu/components/ColorMode";
 
 function HomePage() {
   const estilosDasHomePages = {
@@ -66,6 +67,7 @@ function Timeline({ searchValue, ...props }) {
 };
 
 const StyledHeader = styled.div`
+background-color:${({theme}) => theme.backgroundLevel1};
  img.profile {
       width: 120px;
       height:120px;
@@ -80,14 +82,17 @@ const StyledHeader = styled.div`
   gap:16px;
  }
  img.banner {
+
   display: flex;
       width: 100%;
       height:350px;
-      margin :0px
+      margin :0px;
+    
  }
 
 
  `;
+ const banner= ColorModeContext
 function Header() {
   return (
     <StyledHeader>
