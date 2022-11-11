@@ -9,7 +9,7 @@ function HomePage() {
   const estilosDasHomePages = {
 
   };
-  const [valorDoFiltro, setValorDoFiltro]= React.useState(" ")
+  const [valorDoFiltro, setValorDoFiltro]= React.useState("")
   return (
     <>
       < CSSReset />
